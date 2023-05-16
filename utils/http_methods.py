@@ -8,7 +8,7 @@ class Http_methods:
     headers = {'Content-type': 'application/json'} #Все наши заголовки будут передоваться в формате json
     cookie = ""  #Информация для того чтобы система её запоминала, нужен для  методов для авторизации
 
-    @staticmethod
+    @staticmethod  #Метод нужен для того чтобы не привязываться к этому классу а вызывать эти методы в любом классе и тесте
     def get(url):
         result = requests.get(url, headers=Http_methods.headers, cookies=Http_methods.cookie)
         return result
